@@ -1,0 +1,282 @@
+1)
+def cadastrar_estudante():
+    nome = input("Digite o nome do estudante: ")
+    idade = input("Digite a idade do estudante: ")
+    curso = input("Digite o curso do estudante: ")
+    return {"Nome": nome, "Idade": idade, "Curso": curso}
+
+def main():
+    estudantes = []
+
+    while True:
+        resposta = input("Deseja cadastrar um estudante? (s/n): ").strip().lower()
+        if resposta != "s":
+            break
+
+        estudante = cadastrar_estudante()
+        estudantes.append(estudante)
+
+    with open("estudantes.txt", "w") as arquivo:
+        for estudante in estudantes:
+            arquivo.write(f"Nome: {estudante['Nome']}, Idade: {estudante['Idade']}, Curso: {estudante['Curso']}\n")
+
+if __name__ == "__main__":
+    main()
+
+
+2)
+def ler_arquivo ():
+    
+    nome = input("digite o nome ")
+    idade=input("digite  a idade ")
+    curso=input("digite o curso ")
+
+    
+    lista_aluno = {
+         "nome": nome,
+        "idade": idade,
+        "curso": curso,
+       
+    }
+    return lista_aluno
+    
+def criar_arquivo(lista_aluno):
+    
+    with open("dados_aluno.txt","w")as arquivo:
+        for chave,valor in lista_aluno.items():
+                linha = f'{chave}:{valor}\n'
+                arquivo.write(linha)
+
+
+if __name__=='__main__':
+    lista_aluno = ler_arquivo()
+    criar_arquivo(lista_aluno=lista_aluno)
+
+
+3)
+def ler_informacoes():
+
+    nome = input("digite o nome do estudante ")
+    idade = input("digite a idade do estudate ")
+    diciplina = input("digite a diciplina ")
+
+
+    informacoes = {
+        "nome":nome,"idade":idade, 
+        "curso": 'curso', 
+        }
+
+    return informacoes
+
+def cria_arquivo(informacoes_estudante):
+
+    with open('informacoes_estudante.txt','w')as arquivo:
+        for items_informcoes in informacoes_estudante:   
+            for chave,value in informacoes_estudante.items():
+                linha = f'{chave}:{value}\n'
+                arquivo.write(linha)
+
+if __name__=='__main__':
+    informacoes_estudante = ler_informacoes()
+    cria_arquivo(informacoes_estudante = informacoes_estudante)
+
+
+4)
+def ler_busca():
+    nome = input("digite o nome que esta a  procurar ")
+    idade= input("digite a idade ")
+    curso= input("digite o curso ")
+
+    busca_aluno = {
+        'Nome': nome,
+        'Idade': idade,
+        'Curso': curso,
+    }
+    return busca_aluno
+def criar_arquivo(busca_aluno):
+
+    with open('busca_aluno.txt','w')as arquivo:
+        for chave, valor in busca_aluno.items():
+                linha = f'{chave}:{valor}\n'
+                arquivo.write(linha)
+                
+if __name__ == "__main__":
+    busca_aluno = ler_busca()
+    criar_arquivo(busca_aluno=busca_aluno)
+
+5)
+def remover_dados():
+    nome = input("digite o nome ")
+    idade = input("digite a idade ")
+    ver_dados={
+        "nome": nome,
+        "idade": idade,
+        }
+    return ver_dados
+def cria_arquivo(ver_dados):
+    with open("ver_dados.txt", "w") as arquivo:
+        for chave, valor in ver_dados.items():
+            linha = (f"{chave}: {valor}\n")
+            arquivo.write(linha)
+            
+
+if __name__=='__main__':
+    ver_dados = remover_dados()
+    cria_arquivo(ver_dados=ver_dados)
+
+
+6)
+def ler_informacoes():
+
+    nome = input("digite o nome do estudante ")
+    idade = input("digite a idade do estudate ")
+    diciplina = input("digite a diciplina ")
+
+
+    informacoes = {
+        "nome":nome,"idade":idade, 
+        "curso": 'curso', 
+        }
+
+    return informacoes
+
+def cria_arquivo(informacoes_estudante):
+
+    with open('informacoes_estudante.txt','w')as arquivo:
+        for items_informcoes in informacoes_estudante:   
+            for chave,value in informacoes_estudante.items():
+                linha = f'{chave}:{value}\n'
+                arquivo.write(linha)
+
+if __name__=='__main__':
+    informacoes_estudante = ler_informacoes()
+    cria_arquivo(informacoes_estudante = informacoes_estudante)
+
+7)
+def contar_estudante():
+
+    curso_A= input("diga quantos estudantes ")
+    curso_B = input("digite quantos estudantes ")
+    
+    
+    
+    ler_quantidade={
+        "curso_A": curso_A,
+        "curso_B": curso_B,
+    }
+    
+    
+
+    ler_quantidade.append(ler_quantidade)
+def criar_arquivo(ler_quantidade):
+
+    with open("ler_quantidade.txt","w")as arquivo:
+        for items_quantidade in ler_quantidade():
+            for chave, value in linha.items():
+                linha = f'{chave}: {value}\n'
+                arquivo.write(linha)
+            
+
+        
+if __name__ == "__main__":
+    ler_quantidade=contar_estudante()
+    criar_arquivo(ler_quantidade=ler_quantidade)
+
+
+8)
+def carrega_contato():
+
+    qtd = int(input("quantidade de contatos "))
+    telefone = input("digite numero telefone ")
+    e_mail = input("digidte seu e-mail ")
+
+
+
+    dicionario ={}
+    
+    contato={
+       
+        "numero": "telefone",
+        "endereço":"imail",
+        
+    }
+    return contato
+
+def cria_arquivo(contato):
+     with open("contato.txt", "w") as arquivo:
+        for chave, valor in contato.items():
+            linha = (f"{chave}: {valor}\n")
+            arquivo.write(linha)
+
+
+9)
+def adicionar_produto(compras, produto, preco):
+    compras[produto] = preco
+
+def atualizar_preco(compras, produto, novo_preco):
+    if produto in compras:
+        compras[produto] = novo_preco
+    else:
+        print("Produto não encontrado.")
+
+def calcular_valor_total(compras):
+    total = sum(compras.values())
+    return total
+
+def main():
+    compras = {}
+    
+    while True:
+        print("\nOpções:")
+        print("1. Adicionar produto")
+        print("2. Atualizar preço")
+        print("3. Calcular valor total das compras")
+        print("4. Sair")
+        
+        opcao = input("Escolha uma opção (1/2/3/4): ")
+        
+        if opcao == "1":
+            produto = input("Nome do produto: ")
+            preco = float(input("Preço do produto: "))
+            adicionar_produto(compras, produto, preco)
+        elif opcao == "2":
+            produto = input("Nome do produto para atualizar o preço: ")
+            novo_preco = float(input("Novo preço: "))
+            atualizar_preco(compras, produto, novo_preco)
+        elif opcao == "3":
+            valor_total = calcular_valor_total(compras)
+            print(f"O valor total das compras é: R${valor_total:.2f}")
+        elif opcao == "4":
+            break
+        else:
+            print("Opção inválida. Escolha uma opção válida.")
+
+if __name__ == "__main__":
+    main()
+
+
+10)
+# Dicionário de compras do Exercício 9
+compras = {
+    'produto1': 10.0,
+    'produto2': 20.0,
+    'produto3': 30.0,
+    'produto4': 40.0,
+}
+
+# Nome do arquivo CSV de saída
+nome_arquivo = "compras.csv"
+
+# Abrir o arquivo CSV em modo de escrita
+with open(nome_arquivo, 'w', newline='') as arquivo_csv:
+    escritor = csv.writer(arquivo_csv)
+
+    # Escrever o cabeçalho (opcional)
+    escritor.writerow(['Produto', 'Preço'])
+
+    # Escrever os dados do dicionário no arquivo CSV
+    for produto, preco in compras.items():
+        escritor.writerow([produto, preco])
+
+print(f'Os dados foram exportados para o arquivo "{nome_arquivo}" com sucesso.')
+
